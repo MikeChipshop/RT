@@ -429,8 +429,8 @@ body {
 #container {
 	background: #fff;
 	width: 96%;
-	margin: 2% auto 0 auto;
-	padding: 0 2% 30px 2%;
+	margin: 0px auto;
+	padding: 0 20px 30px 20px;
 	max-width: 1290px; /* remove or edit to adjust width */
 	box-shadow: 0 0 5px #dedede;
 	-webkit-font-smoothing: antialiased;
@@ -861,9 +861,8 @@ NAVIGATION STYLES
 div.menu {
 	position: relative;
 }
+div.menu ul {
 
-	div.menu ul {
-		margin-right: 190px;
 	}
 		div.menu ul li {
 			list-style-type: none;
@@ -939,15 +938,19 @@ nav[role=navigation] {
 	border-top: 5px solid #c7930d;
 	box-shadow: 0 0 5px #e7e7e7;
 }
-	nav[role=navigation] div.menu {
-		background: #fafafa;
-		border: 1px solid #e2e2e2;
-		border-top: 0;
-	}
-
-	nav[role=navigation] ul.menu {
-		display: block;
-	}
+nav[role=navigation] div.menu {
+	background: #fafafa;
+	border: 1px solid #e2e2e2;
+	border-top: 0;
+}
+nav[role=navigation] ul.menu {
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
 		nav[role=navigation] .menu ul li {}
 			nav[role=navigation] .menu ul li a,
 			nav[role=navigation] .menu #menu-icon {
@@ -2944,13 +2947,6 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 		width: 45%;
 	}
 
-}
-
-@media only screen and (min-width: 824px) {
-	nav[role=navigation] ul.menu,
-	div.menu ul {
-		display:block !important;
-	}
 }
 
 @media only screen and (max-width: 600px) and (min-width: 100px) {
