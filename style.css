@@ -431,7 +431,7 @@ body {
 	width: 96%;
 	margin: 2% auto 0 auto;
 	padding: 0 2% 30px 2%;
-	max-width: 1044px; /* remove or edit to adjust width */
+	max-width: 1290px; /* remove or edit to adjust width */
 	box-shadow: 0 0 5px #dedede;
 	-webkit-font-smoothing: antialiased;
 }
@@ -710,22 +710,30 @@ header[role=banner] {
 	margin-left: 10px;
 	margin-right: 10px;
 }
-
-	#site-heading {
-		padding-top: 20px;
-		margin-bottom: 20px;
-		width: 40%;
-		float: left;
-	}
-
-	#inner-header p{margin:10px 0; color:#444;font-size: 18px;}
-
-	#inner-header .phoneWrapper{font-size:16px;font-weight:bold;}
-	#inner-header .phoneWrapper .phoneNum{color:#00599e;}
-
-	#site-logo img {
-		max-width: 100%;
-	}
+#site-heading {
+	padding-top: 20px;
+	margin-bottom: 20px;
+	width: 40%;
+	float: left;
+}
+#inner-header p{
+    margin:10px 0;
+    color:#444;
+    font-size: 18px;
+}
+#inner-header .phoneWrapper{
+    font-size:16px;
+    font-weight:bold;
+}
+#inner-header .phoneWrapper .phoneNum{
+    color:#00599e;
+}
+#site-logo img {
+    max-width: 200px;
+    width:100%;
+    display:block;
+    height:auto;
+}
 
 	#site-title {
 		font-family: Georgia, "Times New Roman", Times, serif;
