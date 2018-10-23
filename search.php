@@ -5,7 +5,7 @@
 get_header(); ?>
 
     <div id="content" class="clearfix">
-        
+
         <div id="main" class="col620 clearfix" role="main">
 
 			<?php if ( have_posts() ) : ?>
@@ -22,8 +22,8 @@ get_header(); ?>
 				<?php endwhile; ?>
 
 				<?php if (function_exists("attorney_pagination")) {
-							attorney_pagination(); 
-				} elseif (function_exists("attorney_content_nav")) { 
+							attorney_pagination();
+				} elseif (function_exists("attorney_content_nav")) {
 							attorney_content_nav( 'nav-below' );
 				}?>
 
@@ -37,27 +37,30 @@ get_header(); ?>
 					<div class="entry-content post_content">
 						<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'attorney' ); ?></p>
 						<?php get_search_form(); ?>
-                        
-                        <p><?php _e('Or you can try these links below.', 'attorney'); ?></p>
-                        
-                        <?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+
+                        <!-- ## Removed excess no results content
+
+                        <p><?php //_e('Or you can try these links below.', 'attorney'); ?></p>
+
+                        <?php //the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
 					<div class="widget">
-						<h2 class="widget-title"><?php _e( 'Most Used Categories', 'attorney' ); ?></h2>
+						<h2 class="widget-title"><?php //_e( 'Most Used Categories', 'attorney' ); ?></h2>
 						<ul>
-						<?php wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 1, 'title_li' => '', 'number' => 10 ) ); ?>
+						<?php //wp_list_categories( array( 'orderby' => 'count', 'order' => 'DESC', 'show_count' => 1, 'title_li' => '', 'number' => 10 ) ); ?>
 						</ul>
 					</div>
 
 					<?php
 					/* translators: %1$s: smilie */
-					$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'attorney' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+					//$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'attorney' ), convert_smilies( ':)' ) ) . '</p>';
+					//the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 					?>
 
-					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
-					</div><!-- .entry-content -->
-				</article><!-- #post-0 -->
+                    <?php //the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+            -->
+					</div>
+				</article>
 
 			<?php endif; ?>
 
@@ -66,5 +69,5 @@ get_header(); ?>
         <?php get_sidebar(); ?>
 
     </div> <!-- end #content -->
-        
+
 <?php get_footer(); ?>
