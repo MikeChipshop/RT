@@ -26,13 +26,6 @@ function attorney_setup() {
 	 */
 	add_theme_support( 'automatic-feed-links' );
 
-	/**
-	 * This theme uses wp_nav_menu() in one location.
-	 */
-	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'attorney' ),
-	) );
-
 	// adding post format support
 	add_theme_support( 'post-formats',
 		array(
@@ -42,6 +35,18 @@ function attorney_setup() {
 }
 endif;
 add_action( 'after_setup_theme', 'attorney_setup' );
+
+/***************************************************
+/ Site Navigation Menus
+/***************************************************/
+
+if ( function_exists( 'register_nav_menus' ) ) {
+    register_nav_menus(
+        array(
+          'top_menu' => 'Top Menu'
+        )
+    );
+}
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -69,258 +74,6 @@ function les_load_scripts() {
 
 add_action('wp_enqueue_scripts', 'les_load_scripts');
 
-
-/*******************************************************************
-* These are settings for the Theme Customizer in the admin panel.
-*******************************************************************
-if ( ! function_exists( 'attorney_theme_customizer' ) ) :
-	function attorney_theme_customizer( $wp_customize ) {
-
-		$wp_customize->remove_section( 'title_tagline');
-		$wp_customize->remove_section( 'static_front_page' );
-
-
-		/* color scheme option *
-		$wp_customize->add_setting( 'attorney_color_settings', array (
-			'default'	=> '#c7930d',
-        ) );
-        */
-
-        /*
-
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'attorney_color_settings', array(
-			'label'    => __( 'Theme Color Scheme', 'attorney' ),
-			'section'  => 'colors',
-			'settings' => 'attorney_color_settings',
-		) ) );
-
-        */
-
-		/* logo option
-		$wp_customize->add_section( 'attorney_logo_section' , array(
-			'title'       => __( 'Site Logo', 'attorney' ),
-			'priority'    => 31,
-			'description' => __( 'Upload a logo to replace the default site name in the header', 'attorney' ),
-		) );
-
-		$wp_customize->add_setting( 'attorney_logo' );
-
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'attorney_logo', array(
-			'label'    => __( 'Choose your logo (ideal width is 100-300px and ideal height is 40-100px)', 'attorney' ),
-			'section'  => 'attorney_logo_section',
-			'settings' => 'attorney_logo',
-        ) ) );
-        */
-
-
-		/* social media option
-		$wp_customize->add_section( 'attorney_social_section' , array(
-			'title'       => __( 'Social Media Icons', 'attorney' ),
-			'priority'    => 32,
-			'description' => __( 'Optional social media buttons in the header', 'attorney' ),
-		) );
-
-		$wp_customize->add_setting( 'attorney_facebook' );
-
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_facebook', array(
-			'label'    => __( 'Enter your Facebook url', 'attorney' ),
-			'section'  => 'attorney_social_section',
-			'settings' => 'attorney_facebook',
-			'priority'    => 101,
-		) ) );
-
-		$wp_customize->add_setting( 'attorney_twitter' );
-
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_twitter', array(
-			'label'    => __( 'Enter your Twitter url', 'attorney' ),
-			'section'  => 'attorney_social_section',
-			'settings' => 'attorney_twitter',
-			'priority'    => 102,
-		) ) );
-
-		$wp_customize->add_setting( 'attorney_google' );
-
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_google', array(
-			'label'    => __( 'Enter your Google+ url', 'attorney' ),
-			'section'  => 'attorney_social_section',
-			'settings' => 'attorney_google',
-			'priority'    => 103,
-		) ) );
-
-		$wp_customize->add_setting( 'attorney_pinterest' );
-
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_pinterest', array(
-			'label'    => __( 'Enter your Pinterest url', 'attorney' ),
-			'section'  => 'attorney_social_section',
-			'settings' => 'attorney_pinterest',
-			'priority'    => 104,
-		) ) );
-
-		$wp_customize->add_setting( 'attorney_linkedin' );
-
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_linkedin', array(
-			'label'    => __( 'Enter your Linkedin url', 'attorney' ),
-			'section'  => 'attorney_social_section',
-			'settings' => 'attorney_linkedin',
-			'priority'    => 105,
-		) ) );
-
-		$wp_customize->add_setting( 'attorney_youtube' );
-
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_youtube', array(
-			'label'    => __( 'Enter your Youtube url', 'attorney' ),
-			'section'  => 'attorney_social_section',
-			'settings' => 'attorney_youtube',
-			'priority'    => 106,
-		) ) );
-
-		$wp_customize->add_setting( 'attorney_tumblr' );
-
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_tumblr', array(
-			'label'    => __( 'Enter your Tumblr url', 'attorney' ),
-			'section'  => 'attorney_social_section',
-			'settings' => 'attorney_tumblr',
-			'priority'    => 107,
-		) ) );
-
-		$wp_customize->add_setting( 'attorney_instagram' );
-
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_instagram', array(
-			'label'    => __( 'Enter your Instagram url', 'attorney' ),
-			'section'  => 'attorney_social_section',
-			'settings' => 'attorney_instagram',
-			'priority'    => 108,
-		) ) );
-
-		$wp_customize->add_setting( 'attorney_flickr' );
-
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_flickr', array(
-			'label'    => __( 'Enter your Flickr url', 'attorney' ),
-			'section'  => 'attorney_social_section',
-			'settings' => 'attorney_flickr',
-			'priority'    => 109,
-		) ) );
-
-		$wp_customize->add_setting( 'attorney_vimeo' );
-
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_vimeo', array(
-			'label'    => __( 'Enter your Vimeo url', 'attorney' ),
-			'section'  => 'attorney_social_section',
-			'settings' => 'attorney_vimeo',
-			'priority'    => 110,
-		) ) );
-
-		$wp_customize->add_setting( 'attorney_rss' );
-
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_rss', array(
-			'label'    => __( 'Enter your RSS url', 'attorney' ),
-			'section'  => 'attorney_social_section',
-			'settings' => 'attorney_rss',
-			'priority'    => 111,
-		) ) );
-
-        */
-		/* slider options
-
-		$wp_customize->add_section( 'attorney_slider_section' , array(
-			'title'       => __( 'Slider Options', 'attorney' ),
-			'priority'    => 33,
-			'description' => __( 'Adjust the behavior of the image slider.', 'attorney' ),
-		) );
-
-		$wp_customize->add_setting( 'attorney_slider_effect', array(
-			'default' => 'scrollHorz',
-			'capability' => 'edit_theme_options',
-		));
-
-		 $wp_customize->add_control( 'effect_select_box', array(
-			'settings' => 'attorney_slider_effect',
-			'label' => __( 'Select Effect:', 'attorney' ),
-			'section' => 'attorney_slider_section',
-			'type' => 'select',
-			'choices' => array(
-				'scrollHorz' => 'Horizontal (Default)',
-				'scrollVert' => 'Vertical',
-				'tileSlide' => 'Tile Slide',
-				'tileBlind' => 'Blinds',
-			),
-		));
-
-		$wp_customize->add_setting( 'attorney_slider_timeout' );
-
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'attorney_slider_timeout', array(
-			'label'    => __( 'Autoplay Speed in Seconds', 'attorney' ),
-			'section'  => 'attorney_slider_section',
-			'settings' => 'attorney_slider_timeout',
-		) ) );
-
-
-	}
-endif;
-add_action('customize_register', 'attorney_theme_customizer');
-
-/**
-* Apply Color Scheme
-
-if ( ! function_exists( 'attorney_apply_color' ) ) :
-	function attorney_apply_color() {
-		if ( get_theme_mod('attorney_color_settings') ) {
-	?>
-		<style>
-			a, a:visited,
-			nav[role=navigation] .menu ul li a:hover,
-			.slide-content .slide-title,
-			.slide-content .slide-title a,
-			.entry-title a:hover,
-			.commentlist .vcard cite.fn a,
-			.commentlist .comment-meta a:hover,
-			.post_content ul li:before,
-			.post_content ol li:before,
-			.colortxt,
-			.cycle-pager span.cycle-pager-active,
-			.att-meta-link abbr[title] {
-				color: <?php echo get_theme_mod('attorney_color_settings'); ?>;
-			}
-
-			#search-box-wrap,
-			header[role=banner] #searchform input[type=submit],
-			.go-button a,
-			.go-button a:visited,
-			.grnbar,
-			.pagination a:hover,
-			.pagination span.current,
-			#respond #submit,
-			a.more-link:after,
-			.nav-next a:after,
-			.next-image a:after,
-			.nav-previous a:after,
-			.previous-image a:after,
-			.commentlist .comment-reply-link:after,
-			.commentlist .comment-reply-login:after {
-				background-color: <?php echo get_theme_mod('attorney_color_settings'); ?>;
-			}
-
-			nav[role=navigation],
-			#sidebar .widget-title,
-			#sidebar-home .widget-title,
-			#sidebar-full .widget-title,
-			#reply-title {
-				border-top: 5px solid <?php echo get_theme_mod('attorney_color_settings'); ?>;
-			}
-
-
-			.gallery img:hover {
-				border: 1px solid <?php echo get_theme_mod('attorney_color_settings'); ?>;
-			}
-
-		</style>
-	<?php
-		}
-	}
-endif;
-add_action( 'wp_head', 'attorney_apply_color' );
-
-
 /**/
 /* Filter the RSS Feed Site Title
 */
@@ -337,45 +90,6 @@ endif;
 add_filter('bloginfo_rss', 'attorney_blogname_rss', 10, 2);
 
 
-
-
-/**
- * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
- */
-if ( ! function_exists( 'attorney_main_nav' ) ) :
-function attorney_main_nav() {
-	// display the wp3 menu if available
-    wp_nav_menu(
-    	array(
-    		'menu' => '', /* menu name */
-    		'theme_location' => 'primary', /* where in the theme it's assigned */
-    		'container_class' => 'menu', /* container class */
-    		'fallback_cb' => 'attorney_main_nav_fallback' /* menu fallback */
-    	)
-    );
-}
-endif;
-
-if ( ! function_exists( 'attorney_main_nav_fallback' ) ) :
-	function attorney_main_nav_fallback() { wp_page_menu( 'show_home=Home&menu_class=menu' ); }
-endif;
-
-if ( ! function_exists( 'attorney_enqueue_comment_reply' ) ) :
-	function attorney_enqueue_comment_reply() {
-			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-					wp_enqueue_script( 'comment-reply' );
-			}
-	 }
-endif;
-add_action( 'comment_form_before', 'attorney_enqueue_comment_reply' );
-
-if ( ! function_exists( 'attorney_page_menu_args' ) ) :
-	function attorney_page_menu_args( $args ) {
-		$args['show_home'] = true;
-		return $args;
-	}
-endif;
-add_filter( 'wp_page_menu_args', 'attorney_page_menu_args' );
 
 /**
  * Register widgetized area and update sidebar with default widgets
@@ -745,3 +459,26 @@ if(function_exists('acf_add_options_page')) {
 /***************************************************/
 
 add_theme_support( 'title-tag' );
+
+/***************************************************
+/ Remove UL's from navigation menus
+/***************************************************/
+
+function remove_ul ( $menu ){
+    return preg_replace( array( '#^<ul[^>]*>#', '#</ul>$#' ), '', $menu );
+}
+add_filter( 'wp_nav_menu', 'remove_ul' );
+
+if(!is_admin()){
+	remove_action('wp_head', 'wp_print_scripts');
+	remove_action('wp_head', 'wp_print_head_scripts', 9);
+	remove_action('wp_head', 'wp_enqueue_scripts', 1);
+
+	add_action('wp_footer', 'wp_print_scripts', 5);
+	add_action('wp_footer', 'wp_enqueue_scripts', 5);
+	add_action('wp_footer', 'wp_print_head_scripts', 5);
+
+	wp_deregister_script('jquery');
+	wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"), false, '1.3.2', true);
+	wp_enqueue_script('jquery');
+}

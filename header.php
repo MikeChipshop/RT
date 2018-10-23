@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title><?php wp_title('|', true, 'left'); ?></title>
@@ -22,7 +24,7 @@
         <h2><?php the_field('gdpr_notice_title','option'); ?></h2>
         <div class="rt_gdpr-inner-content">
             <?php the_field('gdpr_notice_content','option'); ?>
-            <button><i class="fas fa-window-close"></i></button>
+            <button aria-label="Close GDPR Popup"><i class="fas fa-window-close"></i></button>
         </div>
     </div>
 </div>
@@ -65,6 +67,9 @@
       <nav id="access" role="navigation">
         <h1 class="assistive-text section-heading"><?php _e( 'Main menu', 'attorney' ); ?></h1>
         <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'attorney' ); ?>"><?php _e( 'Skip to content', 'attorney' ); ?></a></div>
-        <?php attorney_main_nav(); ?>
+        <div class="menu">
+            <div id="menu-icon">Menu</div>
+            <ul id="menu-main-menu" class="menu"><?php wp_nav_menu( array('theme_location' => 'top_menu' )); ?></ul>
+        </div>
     </nav>
 </header>
