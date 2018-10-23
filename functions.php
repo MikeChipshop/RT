@@ -55,11 +55,24 @@ if ( ! function_exists( 'attorney_content_width' ) ) :
 endif;
 add_action( 'after_setup_theme', 'attorney_content_width' );
 
+/****************************************************
+ENQUEUES
+*****************************************************/
+function les_load_scripts() {
+
+	wp_register_script( 'site-common', get_template_directory_uri() . '/js/all.js', array('jquery'),'null',true  );
+	wp_register_style( 'main-css', get_template_directory_uri() . '/style.css','',time(), 'screen' );
+
+	wp_enqueue_script( 'site-common' );
+	wp_enqueue_style( 'main-css' );
+}
+
+add_action('wp_enqueue_scripts', 'les_load_scripts');
 
 
 /*******************************************************************
 * These are settings for the Theme Customizer in the admin panel.
-*******************************************************************/
+*******************************************************************
 if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 	function attorney_theme_customizer( $wp_customize ) {
 
@@ -67,10 +80,13 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 		$wp_customize->remove_section( 'static_front_page' );
 
 
-		/* color scheme option */
+		/* color scheme option *
 		$wp_customize->add_setting( 'attorney_color_settings', array (
 			'default'	=> '#c7930d',
-		) );
+        ) );
+        */
+
+        /*
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'attorney_color_settings', array(
 			'label'    => __( 'Theme Color Scheme', 'attorney' ),
@@ -78,8 +94,9 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'settings' => 'attorney_color_settings',
 		) ) );
 
+        */
 
-		/* logo option */
+		/* logo option
 		$wp_customize->add_section( 'attorney_logo_section' , array(
 			'title'       => __( 'Site Logo', 'attorney' ),
 			'priority'    => 31,
@@ -92,10 +109,11 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'label'    => __( 'Choose your logo (ideal width is 100-300px and ideal height is 40-100px)', 'attorney' ),
 			'section'  => 'attorney_logo_section',
 			'settings' => 'attorney_logo',
-		) ) );
+        ) ) );
+        */
 
 
-		/* social media option */
+		/* social media option
 		$wp_customize->add_section( 'attorney_social_section' , array(
 			'title'       => __( 'Social Media Icons', 'attorney' ),
 			'priority'    => 32,
@@ -201,7 +219,8 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'priority'    => 111,
 		) ) );
 
-		/* slider options */
+        */
+		/* slider options
 
 		$wp_customize->add_section( 'attorney_slider_section' , array(
 			'title'       => __( 'Slider Options', 'attorney' ),
@@ -242,7 +261,7 @@ add_action('customize_register', 'attorney_theme_customizer');
 
 /**
 * Apply Color Scheme
-*/
+
 if ( ! function_exists( 'attorney_apply_color' ) ) :
 	function attorney_apply_color() {
 		if ( get_theme_mod('attorney_color_settings') ) {
@@ -302,8 +321,8 @@ endif;
 add_action( 'wp_head', 'attorney_apply_color' );
 
 
-/**
-* Filter the RSS Feed Site Title
+/**/
+/* Filter the RSS Feed Site Title
 */
 if ( ! function_exists( 'attorney_blogname_rss' ) ) :
 	function attorney_blogname_rss( $val, $show ) {
@@ -603,65 +622,6 @@ function attorney_pagination($pages = '', $range = 4)
      }
 }
 endif;
-
-if ( ! function_exists( 'attorney_excerpt' ) ) :
-	function attorney_excerpt($limit) {
-		$excerpt = explode(' ', get_the_excerpt(), $limit);
-		if (count($excerpt)>=$limit) {
-		array_pop($excerpt);
-		$excerpt = implode(" ",$excerpt).'...';
-		} else {
-		$excerpt = implode(" ",$excerpt);
-		}
-		$excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
-		return $excerpt;
-	}
-endif;
-
-if ( ! function_exists( 'attorney_content' ) ) :
-	function attorney_content($limit) {
-		$content = explode(' ', get_the_content(), $limit);
-		if (count($content)>=$limit) {
-		array_pop($content);
-		$content = implode(" ",$content).'...';
-		} else {
-		$content = implode(" ",$content);
-		}
-		$content = preg_replace('/\[.+\]/','', $content);
-		$content = apply_filters('the_content', $content);
-		$content = str_replace(']]>', ']]&gt;', $content);
-		  return $content;
-	}
-endif;
-
-if ( ! function_exists( 'attorney_w3c_valid_rel' ) ) :
-	function attorney_w3c_valid_rel( $text ) {
-		$text = str_replace('rel="category tag"', 'rel="tag"', $text); return $text;
-	}
-endif;
-add_filter( 'the_category', 'attorney_w3c_valid_rel' );
-
-if ( ! function_exists( 'attorney_modernizr_addclass' ) ) :
-	function attorney_modernizr_addclass($output) {
-		return $output . ' class="no-js"';
-	}
-endif;
-add_filter('language_attributes', 'attorney_modernizr_addclass');
-
-if ( ! function_exists( 'attorney_modernizr_script' ) ) :
-	function attorney_modernizr_script() {
-		wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/library/js/modernizr-2.6.2.min.js', false, '2.6.2');
-	}
-endif;
-add_action('wp_enqueue_scripts', 'attorney_modernizr_script');
-
-if ( ! function_exists( 'attorney_custom_scripts' ) ) :
-	function attorney_custom_scripts() {
-		//wp_enqueue_script( 'attorney_custom_js', get_template_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '1.0.0' );
-		//wp_enqueue_style( 'attorney_style', get_stylesheet_uri() );
-	}
-endif;
-add_action('wp_enqueue_scripts', 'attorney_custom_scripts');
 
 function custom_post_type_portfolio() {
 	$labels = array(

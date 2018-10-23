@@ -622,7 +622,7 @@ LINK STYLES
 ******************************************************************/
 
 a, a:visited {
-	color: #c7930d;
+	color: #00599e;
 	text-decoration: none;
 }
 a:hover {
@@ -832,7 +832,7 @@ header[role=banner] #searchform  {
 header[role=banner] #searchform input[type=submit] {
 	display: inline-block;
 	float: left;
-		background-color: #c7930d;
+		background-color: #00599e;
 		width: 25px;
 		height: 25px;
 		text-indent: -9999px;
@@ -885,7 +885,7 @@ header[role=banner] #s {
 	}
 		.entry-title a:hover {
 			text-decoration: none;
-			color: #c7930d;
+			color: #00599e;
 		}
 	body.page .entry-title,
 	body.single .entry-title,
@@ -992,7 +992,7 @@ div.menu ul {
 			}
 
 nav[role=navigation] {
-	border-top: 5px solid #c7930d;
+	border-top: 5px solid #00599e;
 	box-shadow: 0 0 5px #e7e7e7;
 }
 nav[role=navigation] div.menu {
@@ -1025,7 +1025,7 @@ nav[role=navigation] ul.menu {
 			}
 
 				nav[role=navigation] .menu ul li a:hover {
-					color: #c7930d;
+					color: #00599e;
 				}
 
 				nav[role=navigation] .menu ul li:first-child a {
@@ -1223,7 +1223,7 @@ POSTS & CONTENT STYLES
 
 					.att-meta-link abbr[title] {
 						border-bottom: 0;
-						color: #c7930d;
+						color: #00599e;
 					}
 
 
@@ -1347,7 +1347,7 @@ POSTS & CONTENT STYLES
 					position: absolute;
 					left: 0;
 					top: 4px;
-					color: #c7930d;
+					color: #00599e;
 					font-family: Arial, Helvetica, sans-serif;
 					font-weight: bold;
 					font-size: 12px;
@@ -1368,7 +1368,7 @@ POSTS & CONTENT STYLES
 					position: absolute;
 					left: 0;
 					top: 0;
-					color: #c7930d;
+					color: #00599e;
 					font-family: Arial, Helvetica, sans-serif;
 					font-weight: 700;
 					font-size: 16px;
@@ -1487,7 +1487,7 @@ POSTS & CONTENT STYLES
 				display: inline-block;
 				width: 15px;
 				height: 15px;
-				background-color: #c7930d;
+				background-color: #00599e;
 				background-image: url(library/images/arrow-right.png);
 				background-repeat: no-repeat;
 				background-position: center center;
@@ -1538,7 +1538,7 @@ GALLERY STYLES
 
 .gallery img:hover {
 	background: white;
-	border: 1px solid #c7930d;
+	border: 1px solid #00599e;
 	box-shadow: 0 0 5px #d0d0d0;
 }
 .gallery-columns-3 .attachment-thumbnail {
@@ -1650,12 +1650,12 @@ PAGE NAVI STYLES
 	}
 
 .pagination a:hover {
-	background-color: #c7930d;
+	background-color: #00599e;
 }
 
 .pagination span.current {
 	padding: 6px 9px 5px 9px;
-	background-color: #c7930d;
+	background-color: #00599e;
 	color: #fff;
 }
 
@@ -1754,7 +1754,7 @@ PAGE LINK STYLES
 		display: inline-block;
 		width: 15px;
 		height: 15px;
-		background-color: #c7930d;
+		background-color: #00599e;
 		background-image: url(library/images/arrow-right.png);
 		background-repeat: no-repeat;
 		background-position: center center;
@@ -1775,7 +1775,7 @@ PAGE LINK STYLES
 		display: inline-block;
 		width: 15px;
 		height: 15px;
-		background-color: #c7930d;
+		background-color: #00599e;
 		background-image: url(library/images/arrow-left.png);
 		background-repeat: no-repeat;
 		background-position: center center;
@@ -1866,7 +1866,7 @@ SIDEBARS & ASIDES
 			font-weight: 900;
 			line-height: 1rem;
 			text-transform: uppercase;
-			border-top: 5px solid #c7930d;
+			border-top: 5px solid #00599e;
 			border-bottom: 1px dotted #ccc;
 			padding: 15px 10px;
         }
@@ -2189,7 +2189,7 @@ body.page-template-full-width-php .commentlist {}
 						display: inline-block;
 						width: 15px;
 						height: 15px;
-						background-color: #c7930d;
+						background-color: #00599e;
 						background-image: url(library/images/arrow-down.png);
 						background-repeat: no-repeat;
 						background-position: center center;
@@ -2227,7 +2227,7 @@ body.page-template-full-width-php #respond-form {}
 	line-height: 1rem;
 	text-transform: uppercase;
 	margin: -2rem -1.2rem 0.75rem -1.2rem;
-	border-top: 5px solid #c7930d;
+	border-top: 5px solid #00599e;
 	border-bottom: 1px dotted #ccc;
 	padding: 15px;
 }
@@ -2336,7 +2336,7 @@ body.page-template-full-width-php #respond-form {}
 			#respond #allowed_tags {}
 				#respond #comment {}
 				#respond #submit {
-					background-color: #c7930d;
+					background-color: #00599e;
 					box-shadow: 1px 2px #e7e7e7;
 					border: 0;
 					padding: 5px 15px;
@@ -2672,7 +2672,7 @@ footer[role=contentinfo] {
 }
 
 .colortxt {
-	color: #c7930d;
+	color: #00599e;
 }
 
 /******************************************************************
@@ -2772,11 +2772,11 @@ jQuery SLIDER STYLES
 		text-transform: uppercase;
 		margin-bottom: 10px;
 		line-height: 1.5rem;
-		color: #c7930d;
+		color: #00599e;
 	}
 		.slides .slide-title a {
 			text-decoration: none;
-			color: #c7930d;
+			color: #00599e;
 		}
 
 #sliderprev,
