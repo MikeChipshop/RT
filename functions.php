@@ -442,16 +442,15 @@ if ( function_exists( 'add_image_size' ) ) add_theme_support( 'post-thumbnails' 
 if ( function_exists( 'add_image_size' ) ) {
     add_image_size( 'projects', 386, 514, array( 'center', 'center', true ));
     add_image_size( 'hero', 1250, 466, array( 'center', 'center', true ));
+    add_image_size( 'learn', 594, 444, array( 'center', 'center', true ));
 }
 
 /***************************************************
 / Options Pages
 /***************************************************/
 if(function_exists('acf_add_options_page')) {
-
 	acf_add_options_page();
     acf_add_options_sub_page('GDPR Notice');
-
 }
 
 /***************************************************
@@ -479,6 +478,6 @@ if(!is_admin()){
 	add_action('wp_footer', 'wp_print_head_scripts', 5);
 
 	wp_deregister_script('jquery');
-	wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"), false, '1.3.2', true);
+	wp_register_script('jquery', ("https://code.jquery.com/jquery-3.1.1.min.js"), false, '1.3.2', true);
 	wp_enqueue_script('jquery');
 }

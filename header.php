@@ -69,7 +69,15 @@
         <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'attorney' ); ?>"><?php _e( 'Skip to content', 'attorney' ); ?></a></div>
         <div class="menu">
             <div id="menu-icon">Menu</div>
-            <ul id="menu-main-menu" class="menu"><?php wp_nav_menu( array('theme_location' => 'top_menu' )); ?></ul>
+            <ul id="menu-main-menu" class="menu">
+                <?php wp_nav_menu(
+                    array(
+                        'theme_location' => 'top_menu',
+                        'container'      => '',
+                        'items_wrap'    => '%3$s',
+                    ));
+                ?>
+            </ul>
         </div>
     </nav>
 </header>
