@@ -51,6 +51,54 @@
         </div>
     </section>
 
+    <section class="rt_home-learn rt_home-section new" style="display:none;">
+        <div class="rt_home-learn-inner">
+            <h1><?php the_field('learn_section_title'); ?></h1>
+            <ul>
+                <li>
+                        <?php
+                            $attachment_id = get_field('learn_more_box_one_image');
+                            $size = "learn";
+                            $image = wp_get_attachment_image_src( $attachment_id, $size );
+                        ?>
+                    <a
+                        href="<?php the_field('learn_more_box_one_link'); ?>"
+                        title="<?php the_field('learn_more_box_one_title'); ?>"
+                        style="background: url('<?php echo $image[0]; ?>') no-repeat center center;background-size:cover"
+                    >
+                        <div class="rt_home-learn-box">
+                            <h2><?php the_field('learn_more_box_one_title'); ?></h2>
+                            <?php the_field('box_one_text'); ?>
+                            <div class="rt_learn-button">
+                                Learn More
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                        <?php
+                            $attachment_id = get_field('learn_more_box_two_image');
+                            $size = "learn";
+                            $image = wp_get_attachment_image_src( $attachment_id, $size );
+                        ?>
+                    <a
+                        href="<?php the_field('learn_more_box_two_link'); ?>"
+                        title="<?php the_field('learn_more_box_two_title'); ?>"
+                        style="background: url('<?php echo $image[0]; ?>') no-repeat center center;background-size:cover"
+                    >
+                        <div class="rt_home-learn-box">
+                            <h2><?php the_field('learn_more_box_two_title'); ?></h2>
+                            <?php the_field('box_two_text'); ?>
+                            <div class="rt_learn-button">
+                                Learn More
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
 	<section id="sidebar-home" class="rt_home-section rt_home-projects">
 			<h1>Recent Projects</h1>
             <?php

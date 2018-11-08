@@ -1574,12 +1574,51 @@ Home Sections
     text-align: center;
     font-size: 18px;
 }
-.rt_home-section.rt_home-projects {
-    padding-bottom:0px;
+
+/* learn new */
+
+.rt_home-learn.rt_home-section.new ul {
+    display:block;
+}
+.rt_home-learn.rt_home-section.new ul li:first-child {
+    margin-bottom:10px;
+}
+.rt_home-learn.rt_home-section.new ul a {
+    display:block;
+    color:#ffffff;
+    text-decoration:none;
+}
+.rt_home-learn.rt_home-section.new h2 {
+    color:#ffffff;
+}
+.rt_home-learn-box {
+    background: rgba(0,89,158,.8);
+    padding: 30px 40px;
+    text-align: center;
+    width: 450px;
+    font-size:16px;
+    min-height: 360px;
+}
+.rt_home-learn.rt_home-section.new ul li:last-child .rt_home-learn-box {
+    background: rgba(153,153,153,.8);
+}
+.rt_home-learn-box h2 {
+    color: #fff;
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:30px;
+}
+.rt_learn-button {
+    border: 1px solid #fff;
+    padding: 18px;
+    width: 230px;
+    margin: 20px auto 0px auto;
 }
 
 /* Projects */
-
+.rt_home-section.rt_home-projects {
+    padding-bottom:0px;
+}
 
 /******************************************************************
 GALLERY STYLES
