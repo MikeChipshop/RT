@@ -21,44 +21,16 @@
         </div>
     </div>
 
-    <section class="rt_home-learn rt_home-section">
-        <div class="rt_home-learn-inner">
-            <h1><?php the_field('learn_section_title'); ?></h1>
-            <ul>
-                <li>
-                    <a href="<?php the_field('learn_more_box_one_link'); ?>" title="<?php the_field('learn_more_box_one_title'); ?>">
-                        <?php
-                            $attachment_id = get_field('learn_more_box_one_image');
-                            $size = "learn";
-                            $image = wp_get_attachment_image_src( $attachment_id, $size );
-                        ?>
-                        <img src="<?php echo $image[0]; ?>" alt="<?php the_field('learn_more_box_one_title'); ?>">
-                        <h2><?php the_field('learn_more_box_one_title'); ?></h2>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?php the_field('learn_more_box_two_link'); ?>" title="<?php the_field('learn_more_box_two_title'); ?>">
-                        <?php
-                            $attachment_id = get_field('learn_more_box_two_image');
-                            $size = "learn";
-                            $image = wp_get_attachment_image_src( $attachment_id, $size );
-                        ?>
-                        <img src="<?php echo $image[0]; ?>" alt="<?php the_field('learn_more_box_two_title'); ?>">
-                        <h2><?php the_field('learn_more_box_two_title'); ?></h2>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </section>
 
-    <section class="rt_home-learn rt_home-section new" style="display:none;">
+
+    <section class="rt_home-learn rt_home-section new">
         <div class="rt_home-learn-inner">
             <h1><?php the_field('learn_section_title'); ?></h1>
             <ul>
                 <li>
                         <?php
                             $attachment_id = get_field('learn_more_box_one_image');
-                            $size = "learn";
+                            $size = "full";
                             $image = wp_get_attachment_image_src( $attachment_id, $size );
                         ?>
                     <a
@@ -78,7 +50,7 @@
                 <li>
                         <?php
                             $attachment_id = get_field('learn_more_box_two_image');
-                            $size = "learn";
+                            $size = "full";
                             $image = wp_get_attachment_image_src( $attachment_id, $size );
                         ?>
                     <a

@@ -1598,9 +1598,21 @@ Home Sections
     width: 450px;
     font-size:16px;
     min-height: 360px;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+a:hover .rt_home-learn-box {
+    background: rgba(0,89,158,1);
 }
 .rt_home-learn.rt_home-section.new ul li:last-child .rt_home-learn-box {
     background: rgba(153,153,153,.8);
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+}
+.rt_home-learn.rt_home-section.new ul li:last-child a:hover .rt_home-learn-box {
+    background: rgba(153,153,153,1);
 }
 .rt_home-learn-box h2 {
     color: #fff;
@@ -3001,7 +3013,14 @@ Developed by: Andy Clarke & the 320 & Up Extension
 URL: http://stuffandnonsense.co.uk/projects/320andup/
 ******************************************************************/
 
-
+@media only screen and (max-width: 910px) {
+    .rt_home-learn-box {
+        width:50%;
+    }
+    .rt_learn-button {
+        width:100%;
+    }
+}
 @media only screen and (max-width: 824px) {
 	#sidebar-home #projects{
 	width:100%;
@@ -3136,6 +3155,11 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 
 }
 
+@media only screen and (max-width: 600px) and (min-width: 100px) {
+    .rt_home-learn-box {
+        width: 100%;
+    }
+}
 @media only screen and (max-width: 600px) and (min-width: 100px) {
 	.slide-title {
 		font-size: 1rem;
