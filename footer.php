@@ -14,16 +14,18 @@
         <div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
             <img src="https://www.rtalkinleadworkandroofing.co.uk/wp-content/themes/RTAlkin/images/rt-alkin-logo.png" width="250" itemprop="url">
         </div>
-        <ul>
-            <li itemprop="name">RT Alkin</li>
-            <li>Tel: <a href="tel:07703102725"><span itemprop="telephone">07703 102725</span></a></li>
-            <li>Email: <a href="mailto:richard@rtalkin.co.uk" itemprop="email">richard@rtalkin.co.uk</a></li>
-        </ul>
-        <ul itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-            <li itemprop="streetAddress">St Michaels</li>
-            <li itemprop="addressLocality">Tenterden</li>
-            <li itemprop="postalCode">TN30 6PA</li>
-        </ul>
+        <div class="rt_footer-contact-lists">
+            <ul>
+                <li itemprop="name">RT Alkin</li>
+                <li>Tel: <a href="tel:07703102725"><span itemprop="telephone">07703 102725</span></a></li>
+                <li>Email: <a href="mailto:richard@rtalkin.co.uk" itemprop="email">richard@rtalkin.co.uk</a></li>
+            </ul>
+            <ul itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                <li itemprop="streetAddress">St Michaels</li>
+                <li itemprop="addressLocality">Tenterden</li>
+                <li itemprop="postalCode">TN30 6PA</li>
+            </ul>
+        </div>
     </section>
 
     </footer><!-- #colophon -->
