@@ -38,6 +38,9 @@
 
 
 <?php wp_footer(); ?>
+<script defer src="<?php bloginfo('stylesheet_directory'); ?>/js/fa-brands.min.js"></script>
+  <script defer src="<?php bloginfo('stylesheet_directory'); ?>/js/fa-solid.min.js"></script>
+  <script defer src="<?php bloginfo('stylesheet_directory'); ?>/js/fontawesome.min.js"></script>
 <?php if ( is_page_template( 'tpl_location-pages.php' ) ): ?>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_oWa8xmTOpD0ISjI5rQUXBEEM77aWSQc&sensor=false"></script>
 <?php endif; ?>
