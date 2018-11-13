@@ -16,14 +16,14 @@
         </div>
         <div class="rt_footer-contact-lists">
             <ul>
-                <li itemprop="name">RT Alkin</li>
-                <li>Tel: <a href="tel:07703102725"><span itemprop="telephone">07703 102725</span></a></li>
-                <li>Email: <a href="mailto:richard@rtalkin.co.uk" itemprop="email">richard@rtalkin.co.uk</a></li>
+                <li itemprop="name"><?php the_field('business_name','option'); ?></li>
+                <li>Tel: <a href="tel:<?php the_field('business_telephone','option'); ?>"><span itemprop="telephone"><?php the_field('business_telephone','option'); ?></span></a></li>
+                <li>Email: <a href="mailto:<?php the_field('business_email','option'); ?>" itemprop="email"><?php the_field('business_email','option'); ?></a></li>
             </ul>
             <ul itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-                <li itemprop="streetAddress">St Michaels</li>
-                <li itemprop="addressLocality">Tenterden</li>
-                <li itemprop="postalCode">TN30 6PA</li>
+                <li itemprop="streetAddress"><?php the_field('business_address','option'); ?></li>
+                <li itemprop="addressLocality"><?php the_field('business_address_line-two','option'); ?></li>
+                <li itemprop="postalCode"><?php the_field('business_postcode','option'); ?></li>
             </ul>
         </div>
     </section>

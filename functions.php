@@ -450,7 +450,8 @@ if ( function_exists( 'add_image_size' ) ) {
 /***************************************************/
 if(function_exists('acf_add_options_page')) {
 	acf_add_options_page();
-    acf_add_options_sub_page('GDPR Notice');
+	acf_add_options_sub_page('GDPR Notice');
+	acf_add_options_sub_page('Business Details');
 }
 
 /***************************************************

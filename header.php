@@ -39,7 +39,7 @@
       </ul>
 </div>
     <div class="rt_topbar-right">
-    <p class="phoneWrapper"><a class="phoneNum" href="tel:+447703102725"><i class="fas fa-phone fa-flip-horizontal"></i> Call for a quote: 07703 102725</a></p>
+    <p class="phoneWrapper"><a class="phoneNum" href="tel<?php the_field('business_telephone','option'); ?>"><i class="fas fa-phone fa-flip-horizontal"></i> Call for a quote: <?php the_field('business_telephone','option'); ?></a></p>
 </div>
 </div>
 <div id="container">
