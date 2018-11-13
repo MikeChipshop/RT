@@ -2799,6 +2799,9 @@ footer[role=contentinfo] h1 {
 .rt_footer-contact-lists ul:first-child {
 	padding-right:20px;
 }
+.rt_footer-contact-lists ul:first-child li:last-child a {
+	text-transform:lowercase;
+}
 
 .attribution {
 	float: none;

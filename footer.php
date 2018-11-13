@@ -10,7 +10,7 @@
     </section>
     <section class="rt_get-in-touch" itemscope itemtype="http://schema.org/LocalBusiness">
 
-        <h1>Get in Touch</h1>
+        
         <div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
             <img src="https://www.rtalkinleadworkandroofing.co.uk/wp-content/themes/RTAlkin/images/rt-alkin-logo.png" width="250" itemprop="url">
         </div>
