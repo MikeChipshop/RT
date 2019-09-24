@@ -10,20 +10,22 @@
     </section>
     <section class="rt_get-in-touch" itemscope itemtype="http://schema.org/LocalBusiness">
 
-        <h1>Get in Touch</h1>
+        
         <div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
             <img src="https://www.rtalkinleadworkandroofing.co.uk/wp-content/themes/RTAlkin/images/rt-alkin-logo.png" width="250" itemprop="url">
         </div>
-        <ul>
-            <li itemprop="name">RT Alkin</li>
-            <li>Tel: <a href="tel:07703102725"><span itemprop="telephone">07703 102725</span></a></li>
-            <li>Email: <a href="mailto:richard@rtalkin.co.uk" itemprop="email">richard@rtalkin.co.uk</a></li>
-        </ul>
-        <ul itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
-            <li itemprop="streetAddress">St Michaels</li>
-            <li itemprop="addressLocality">Tenterden</li>
-            <li itemprop="postalCode">TN30 6PA</li>
-        </ul>
+        <div class="rt_footer-contact-lists">
+            <ul>
+                <li itemprop="name"><?php the_field('business_name','option'); ?></li>
+                <li>Tel: <a href="tel:<?php the_field('business_telephone','option'); ?>"><span itemprop="telephone"><?php the_field('business_telephone','option'); ?></span></a></li>
+                <li>Email: <a href="mailto:<?php the_field('business_email','option'); ?>" itemprop="email"><?php the_field('business_email','option'); ?></a></li>
+            </ul>
+            <ul itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                <li itemprop="streetAddress"><?php the_field('business_address','option'); ?></li>
+                <li itemprop="addressLocality"><?php the_field('business_address_line-two','option'); ?></li>
+                <li itemprop="postalCode"><?php the_field('business_postcode','option'); ?></li>
+            </ul>
+        </div>
     </section>
 
     </footer><!-- #colophon -->
@@ -36,6 +38,9 @@
 
 
 <?php wp_footer(); ?>
+<script defer src="<?php bloginfo('stylesheet_directory'); ?>/js/fa-brands.min.js"></script>
+  <script defer src="<?php bloginfo('stylesheet_directory'); ?>/js/fa-solid.min.js"></script>
+  <script defer src="<?php bloginfo('stylesheet_directory'); ?>/js/fontawesome.min.js"></script>
 <?php if ( is_page_template( 'tpl_location-pages.php' ) ): ?>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_oWa8xmTOpD0ISjI5rQUXBEEM77aWSQc&sensor=false"></script>
 <?php endif; ?>
