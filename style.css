@@ -3386,3 +3386,16 @@ PRINT STYLES
 	}
 
 }
+
+
+/* Captcha Style - Mike */
+.rt_cf7-captcha {
+    display:flex;
+    align-items:center;
+}
+.rt_cf7-captcha img {
+    top:0px!important;
+}
+.rt_cf7-captcha .wpcf7-form-control-wrap.captcha-1 {
+    max-width:100px;
+}
